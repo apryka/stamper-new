@@ -1,0 +1,1 @@
+export { SliderNav } from "./SliderNav";

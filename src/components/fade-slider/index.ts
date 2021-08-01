@@ -1,0 +1,1 @@
+export { FadeSlider } from "./FadeSlider";

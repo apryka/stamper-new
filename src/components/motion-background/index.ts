@@ -1,0 +1,1 @@
+export { MotionBackground } from "./MotionBackground";
