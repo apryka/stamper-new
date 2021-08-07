@@ -35,11 +35,19 @@ const Main = styled.div`
 `;
 
 const Player = styled.div`
-  width: 640px;
-  height: 360px;
+  width: 100%;
+  max-width: 640px;
   border-radius: 30px;
   overflow: hidden;
   background-color: lightgray;
+  position: relative;
+  padding-top: 56.25%;
+
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 const Wrapper = styled(motion.div)`
@@ -50,8 +58,8 @@ const Wrapper = styled(motion.div)`
   flex-direction: column;
   row-gap: 34px;
   margin: auto;
-  width: 640px;
-  height: 460px;
+  width: 100%;
+  max-width: 640px;
   position: absolute;
   left: 50%;
 `;
@@ -158,7 +166,9 @@ const VideoSlider: React.FC = () => {
                 url={data[activeSlide].videoUrl}
                 playIcon={<CircleButton />}
                 light
-                width={640}
+                width="100%"
+                height="100%"
+                class="react-player"
               />
             </Player>
             <Info>

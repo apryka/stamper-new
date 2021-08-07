@@ -12,6 +12,7 @@ const Container = styled.div`
 `;
 
 const CoverContainer = styled.div`
+  width: 100%;
   margin-bottom: 30px;
   border-radius: 30px;
   overflow: hidden;

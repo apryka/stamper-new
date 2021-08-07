@@ -41,6 +41,9 @@ const Background = styled.div`
 const Wrapper = styled.div`
   position: relative;
   z-index: 100;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   &:before {
     content: "";

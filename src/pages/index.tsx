@@ -102,6 +102,9 @@ const BottomSection = styled.div`
   background-size: cover;
   position: relative;
   padding-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   ${(props) => !props.theme.screens.md && css`
     &:after {

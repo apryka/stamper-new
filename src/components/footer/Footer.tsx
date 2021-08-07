@@ -12,6 +12,9 @@ import Instagram from "../../images/icons/instagram-icon.svg";
 const StyledFooter = styled.footer`
   background: linear-gradient(102.8deg, #042e6f -1.12%, #001431 100.98%);
   border-top: 1px solid #709be7;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const FooterGrid = styled.div`

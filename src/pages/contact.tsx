@@ -79,6 +79,9 @@ const Hero = styled.section`
   background-size: ${(props) => props.theme.screens.lg ? 'auto, cover' : 'auto, 100%'};
   background-color: #fff;
   padding-bottom: 94px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const Header = styled.h2`

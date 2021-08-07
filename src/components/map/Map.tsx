@@ -13,7 +13,7 @@ type Props = {
 
 const Map: React.FC<Props> = ({ center, zoom, height }) => {
   return (
-    <div style={{ width: "100%", height: `${height}px` }}>
+    <div style={{ width: "100%", height: `${height}px`, maxWidth: 1920, marginLeft: "auto", marginRight: "auto"}}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
         defaultCenter={center}

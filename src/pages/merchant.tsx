@@ -435,6 +435,9 @@ const WorkSection = styled.section`
   padding-bottom: 150px;
   position: relative;
   margin-top: -170px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const WorkSectionHeader = styled.h4<SpaceProps>`
@@ -506,6 +509,9 @@ const DifferenceSection = styled.section`
   background-size: cover;
   padding-bottom: 150px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   ${(props) =>
     props.theme.screens.md &&
@@ -659,6 +665,9 @@ const GreySection = styled.section`
   padding-top: ${(props) => (props.theme.screens.md ? "90px" : "192px")};
   padding-bottom: 140px;
   margin-top: -50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const LogoSliderContainer = styled.div`
@@ -733,15 +742,15 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
       }
       postCover: file(name: { eq: "blog-cover" }) {
         childImageSharp {
-          fixed(width: 540, pngQuality: 340, webpQuality: 90) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 90, maxWidth: 540) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       videoCover: file(name: { eq: "video-cover" }) {
         childImageSharp {
-          fixed(width: 540, pngQuality: 300, webpQuality: 90) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 90, maxWidth: 540) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -775,8 +784,6 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
       }
     }
   `);
-
-  console.log(query);
 
   return (
     <>
@@ -852,6 +859,9 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
             marginTop: "-140px",
             paddingTop: breakpoints.md ? "550px" : "200px",
             paddingBottom: "80px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            maxWidth: 1920,
             zIndex: -1,
           }}
         >
@@ -1258,7 +1268,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
             <Grid>
               <Post
                 cover={
-                  <Img fixed={query.postCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.postCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min czytania"
@@ -1268,7 +1278,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
               />
               <Post
                 cover={
-                  <Img fixed={query.postCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.postCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min czytania"
@@ -1278,7 +1288,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
               />
               <Post
                 cover={
-                  <Img fixed={query.postCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.postCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min czytania"
@@ -1309,7 +1319,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
             <Grid>
               <Post
                 cover={
-                  <Img fixed={query.videoCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.videoCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min oglądania"
@@ -1317,7 +1327,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
               />
               <Post
                 cover={
-                  <Img fixed={query.videoCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.videoCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min oglądania"
@@ -1325,7 +1335,7 @@ const MerchantPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
               />
               <Post
                 cover={
-                  <Img fixed={query.videoCover.childImageSharp.fixed} alt="" />
+                  <Img fluid={query.videoCover.childImageSharp.fluid} alt="" />
                 }
                 date="4 MAJA 2020"
                 time="7 min oglądania"

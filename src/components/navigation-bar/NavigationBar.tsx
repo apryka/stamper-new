@@ -11,6 +11,9 @@ import { Links, LanguageOptions } from "./constants";
 const Bar = styled.div`
   display: ${(props) => (props.theme.screens.md ? "none" : "block")};
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const BarContent = styled.div`

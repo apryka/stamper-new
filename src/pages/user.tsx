@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import styled, { css, createGlobalStyle } from "styled-components";
 import { motion } from "framer-motion";
 import { RouteComponentProps } from "@reach/router";
+import ReactPlayer from "react-player/youtube";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/nunito/400.css";
@@ -51,6 +52,7 @@ import SliderBgSmall from "../images/slider-section-bg-small.svg";
 import UserGrid1 from "../images/user-grid-1.svg";
 import UserGrid2 from "../images/user-grid-2.svg";
 import UserGrid3 from "../images/user-grid-3.svg";
+import MerchantVideoPoster from "../images/merchant-video-poster.png";
 
 import { slides } from "../pages-config/user-config";
 
@@ -111,6 +113,9 @@ const SectionBackground = styled.section`
   background-repeat: no-repeat, no-repeat;
   background-position: 0 0, 50%;
   background-size: 100%, cover;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   /* &:before {
     content: '';
@@ -157,6 +162,9 @@ const CardHolder = styled.div`
   position: relative;
   /* margin-bottom: 200px; */
   margin-bottom: ${(props) => (props.theme.screens.md ? "0" : "200px")};
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   &:before {
     content: "";
@@ -193,6 +201,9 @@ const SliderSection = styled.div`
   /* min-height: 1692px; */
   min-height: ${(props) => (props.theme.screens.md ? "1880px" : "1692px")};
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 
   &:after {
     content: "";
@@ -209,6 +220,9 @@ const SliderSection = styled.div`
 
 const SectionWhite = styled.div`
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
 `;
 
 const UserPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
@@ -219,13 +233,6 @@ const UserPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
       mainImage: file(name: { eq: "user-main" }) {
         childImageSharp {
           fixed(width: 474, pngQuality: 90, webpQuality: 90) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-      userGridVideo: file(name: { eq: "user-video-bg" }) {
-        childImageSharp {
-          fixed(width: 457, pngQuality: 90, webpQuality: 90) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }
@@ -389,7 +396,17 @@ const UserPage: React.FC<RouteComponentProps> = ({ location = {} }) => {
               </ContentGridDescription>
             </ContentGridTextContainer>
             <MotionBackground variant={2}>
-              <Img fixed={query.userGridVideo.childImageSharp.fixed} alt="" />
+              <ReactPlayer
+                url="https://youtu.be/MhtitC4vwNA"
+                light={MerchantVideoPoster}
+                playIcon={<CircleButton />}
+                style={{
+                  position: "relative",
+                  zIndex: 1,
+                }}
+                width={457}
+                height={257}
+              />
             </MotionBackground>
           </ContentGrid>
         </Container>
